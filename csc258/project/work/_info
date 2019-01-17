@@ -1,0 +1,95 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/DESL/Quartus18/project
+vcontrol
+Z0 !s110 1542853489
+!i10b 1
+!s100 3]VHikdhNEiJKJNDFU=S_2
+I193iUi8WTJ[b:WFJf8d;X2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dE:/project
+Z3 w1542852978
+Z4 8NotNot.v
+Z5 FNotNot.v
+L0 223
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1542853489.000000
+Z8 !s107 NotNot.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|NotNot.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vdatapath
+R0
+!i10b 1
+!s100 `I61YZWX^4D;0>bCiJh?Y0
+IBLMl2_H?]c_?B04]OE<zN2
+R1
+R2
+R3
+R4
+R5
+L0 127
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vNotNot
+R0
+!i10b 1
+!s100 6U]]=6noM7=15l7>5CHZU0
+I9K8Q1TVLO_8ZMacmC8iH_2
+R1
+R2
+R3
+R4
+R5
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@not@not
+vsegdecoder
+R0
+!i10b 1
+!s100 7@0L]ZVejAMIzNeFYGiEX0
+IEN^]n]G19^jBjezFO[HeF3
+R1
+R2
+R3
+R4
+R5
+L0 406
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

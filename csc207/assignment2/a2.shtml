@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Mac OS X https://github.com/w3c/tidy-html5/tree/c63cc39">
+        <title>
+            CSC207H: Assignment 2
+        </title>
+    </head>
+    <body>
+        <h1>
+            CSC207H: Assignment 2
+        </h1>
+        <p>
+            <strong>Group size:</strong> Individual
+        </p>
+        <p>
+            <strong>Summary:</strong> Understand a mostly-working program that has significant style and design flaws, then clean it up, and then add features.
+        </p>
+        <p>
+            <strong>Due Date:</strong> Thursday 15 February 2018 at 10 pm with an optional extension to Tuesday 20 February 2018 at 10 pm.
+        </p>
+        <p>
+          We will be assigning the group project on Friday 16 February during lecture. You are encouraged to submit your Assignment 2 on MarkUs by Thursday 15 February at 10 pm, so that you are able to start the group
+        project right away. However, anyone who needs an extension can submit
+        their A2 as late as 10 pm on Tuesday 20 February.
+        </p>
+        <h2>
+            Learning objectives
+        </h2>
+        <p>
+            By the end of this assignment, you will have
+        </p>
+	    <ul>
+            <li>worked with version control, making frequent commits to your git repository,
+            </li>
+            <li>read and worked with code that is not well designed,
+            </li>
+            <li>refactored the code to make it more readable and maintainable,
+            </li>
+            <li>extensively used IntelliJ's refactoring tools,
+            </li>
+            <li>found and fixed several bugs,
+            </li>
+            <li>added features to the refactored code,
+            </li>
+            <li>written useful Javadoc and internal comments, and maintained or improved the visual style of the given code,
+            </li>
+            <li>used inheritance extensively to clean up code.
+            </li>
+        </ul>
+        <h2>
+            Problem domain
+        </h2>
+        <p>
+            For this assignment, you will work with a Java program that simulates an island treasure hunt where two treasure hunters racing along the path on the island in order to claim the treasure, the prestine yellow coin. When one of the treasure hunters picks up the treasure, a new treasure piece reappears elsewhere ("respawns") on the map. (The starter code mostly does this, but it's really gross code and has some significant bugs.)
+        </p>
+
+        <p>
+            The program draws the map of paths on the island in a window and allows the user to control the direction of the treasure hunters by clicking on parts of the paths.
+        </p>
+	   <p>
+            The code was repurposed from code that was written twenty years ago. It can be improved in many ways.Imagine that your company found this code and it was decided that you would improve it so that it can be marketed as a new treasure island game. Throughout this assignment, your ultimate goal is to make the code easy to read by other people and easy to modify, in case you want to repurpose this code again later.
+        </p>
+        <h2>
+            Code Smells
+        </h2>
+        <p>
+            In this assignment, you will be finding and fixing <a target="_blank" href="https://en.wikipedia.org/wiki/Code_smell">Code smells [Wikipedia]</a>, which are warning signs in your code. Take a look at the list of common code smells on that Wikipedia page. There are related <a target="_blank" href="https://en.wikipedia.org/wiki/Design_smell">Design smells [Wikipedia]</a>, which you should also read about.
+        </p>
+        <p>
+            You will be graded, in part, on how many code/design smells you were able to identify and fix. Here is a blog post that discusses some of <a target="_blank" href="https://blog.codinghorror.com/code-smells/">the more common smells</a>.
+        </p>
+        <h2>
+            Getting set up
+        </h2>
+        <p>
+            Clone your MarkUs repository. Inside that repository is a directory called <code>assignment2</code>, and it contains this handout. It also contains a subdirectory <code>src</code>. Inside the <code>src</code> directory is the directory for the Java packages used by the starter code, as well as the starter code itself.
+        </p>
+        <h3>
+            Setting up
+        </h3>
+        <p>
+            It's probably easiest to clone your repository and then create a new IntelliJ project in the assignment2 directory, which contains the <code>src</code> directory with the starter code.
+        </p>
+        <p>
+            <strong>Don't change the code yet.</strong>
+
+        </p>
+        <p>
+            Run the program. You should see a window containing a grid on which is a path with clickable parts, samples of each type of path that are not connected to the main path, and a number of buttons on the right side of the window.</p>
+	        <h3>
+            The Google Java Style Guide
+        </h3>
+        <p>
+            Google has published a <a target="_blank" href="https://google.github.io/styleguide/javaguide.html">Java Style Guide</a>. <strong>You must set up IntelliJ to use it for the first part of this assignment.</strong>
+        </p>
+        <p>
+            Follow the <a href="https://stackoverflow.com/questions/42979700/how-to-configure-google-java-code-formatter-in-intellij-idea-17">instructions on StackOverflow to install the google-java-format Plugin</a>. Now when you select <code>Code -&gt;Reformat Code</code> it will follow the Java style guide as much as possible.
+        </p>
+        <p>
+            If you need help, search the web and the course discussion board, and if you can't find an answer, ask!
+        </p>
+        <h2>
+            What to do
+        </h2>
+        <p>
+            You must do this assignment one step a time, <strong>pushing your changes whenever you finish a step</strong>.
+        </p>
+        <h3>
+            Step 1: Create notes.txt
+        </h3>
+        <p>
+            Create a file called <code>notes.txt</code> in the <code>assignment2</code> directory of your repo. Copy and paste this into your file:
+        </p>
+        <pre style="border: 1px solid #006; background: #ccc">
+#########
+# Step 1
+
+Code affected: none
+
+Created this file.
+</pre>
+        <p>
+            Add and commit it with this commit message: <code>"Added notes.txt for keeping track of changes during Assignment 2."</code>. Copy and paste! Then push your changes.
+        </p>
+        <p>
+            <b>Sanity check:</b> Clone your repo again, somewhere else on your hard drive, and make sure that <code>assignment2/notes.txt</code> exists and has the expected contents. You can do this by running <code>git clone url</code> from the command line, where <code>url</code> is replaced by the url of your MarkUs repository (see above). If the file does not exist yet, keep trying until it does.
+        </p>
+        <h3>
+            Step 2: Reformat the starter code
+        </h3>
+        <p>
+            Open up <code>Direction.java</code> and study the code. It's gross. Select <code>Code-&gt;Reformat Format</code>, or use the keyboard shortcut. Do this with the rest of the files. Don’t fix bugs, don’t manually add spaces, don’t move anything around, just use Google’s style formatter.
+        </p>
+        <p>
+            Run the program to make sure that it still works.
+        </p>
+        <p>
+            Make a note in <code>notes.txt</code> that you reformatted all the source code. Copy and paste this as your note:
+        </p>
+        <pre style="border: 1px solid #006; background: #ccc">
+#########
+# Step 2
+
+Code affected: all .java files
+
+Reformatted using the Google Java style formatter.
+</pre>
+        <p>
+            Git add each <code>.java</code> file, and also <code>notes.txt</code>. Commit and push.
+        </p>
+        <p>
+            It's up to you whether you want to do a sanity check, but we recommend it. You can do this by using <code>git pull</code> on the previous file.
+        </p>
+        <p>
+            <strong>So far, everyone's repositories should have exactly the same changes in them.</strong>
+        </p>
+        <h3>
+            Step 3: Draw an inheritance diagram
+	</h3>
+	<p>
+This can be done at the same time as Step 4.
+        </p>
+        <p>
+	Read through the code and draw an inheritance graph which includes all the classes defined in the program. If class <code>B</code> extends class <code>A</code>, then show an arrow pointing from <code>B</code> to <code>A</code>. If a class in the program explicitly inherits from a Java API class (e.g., Thread), then show this relationship as well in your diagram. To distinguish the Java API classes from the ones in our program, draw a rectangle around each Java API classname and an oval around each class name from our program. <strong>Note: this is not a UML diagram</strong>.
+	</p>
+
+	<h3>
+            Step 4: Read through the code
+	</h3>
+	<p>Here are some questions you can ask yourself in order to better understand the code: <ul>
+	<li>
+	How does one piece of Path determine which other piece of Path is “connected” to it?
+	</li>
+	<li>
+	When building a Map, how do you “connect” one piece of Path to another?
+	</li>
+	<li>
+	What instance variable in which class determines the speed of a treasure hunter?
+	</li>
+	<li>
+	What is the relationship between the value of this variable and the speed of the treasure hunter?
+	</li>
+	<li>
+	What sequence of code is executed when someone clicks on the “Accelerate” button, causing the treasure hunter(s) to speed up?
+	</li>
+	</ul>
+    <p>
+            There are many design flaws. Here's a simple one: method <code>leave</code> in class <code>Path</code> has duplicate code inside an unnecessary <code>if</code> statement. Fix it. That function only needs to be 2 lines long.
+        </p>
+        <p>
+            Add this note to <code>notes.txt</code>:
+        </p>
+        <pre style="border: 1px solid #006; background: #ccc">
+##################
+# Step 3
+
+Code affected: Path.leave
+
+Flaw: unnecessary if, leading to duplicate code.
+
+Fix: replaced if statement with a single assignment statement.
+</pre>
+        <p>
+            <strong style="color:darkred">That is the format that every one of your notes should follow.</strong> It includes the list of methodss and instance variables that are affected, the flaw that you addressed, and a note about how you fixed it. The flaw and the fix should be concise: no more than a couple of sentences each. <strong>The TAs will be using these notes as the primary guide to marking your assignment, so be clear in your communication.</strong> Bad grammar and spelling, unclear descriptions, and excessive verbosity will all receive mark deductions.
+        </p>
+        <p>
+            Add <code>notes.txt</code> and <code>Path.java</code>, commit (with the clear commit message above), and push.
+        </p>
+	<h3>
+		Steps 5 to N-2: Refactor the code and correct errors
+	</h3>
+Refactor the program to eliminate useless or repetitive code. Other flaws to avoid or eliminate: bad names, duplicate code, ugly code, nearly-duplicate classes, inappropriate print statements (when was the last time you ran an app that printed anything?), inappropriate use of <code>static</code>, chances to use inheritance, chances to use interfaces or abstract classes, bad visibility modifiers, and recalculating a value over and over when it only needs to be done once are all candidates. You can refer back to the "Code Smell" links for more ideas. You will be marked on the quality of your fixes. By the end of this process, there should be no obvious design problems.
+        </h3>
+        <p>
+            Every time you fix a flaw, add a feature, or create a new file, add a note to notes.txt that looks like the following where the value of <code>x</code> should increase by one each time:
+        </p>
+        <pre style="border: 1px solid #006; background: #ccc">
+#########
+# Step x
+
+Code affected:
+
+Flaw:
+
+Fix:
+</pre>
+        <p>
+            That is the format that every one of your notes should follow: the list of files that are affected, the flaw that you addressed, and a note about how you fixed it. The flaw and the fix should be concise: no more than a couple of sentences each. <strong>The TAs will be using these notes as the primary guide to marking your assignment, so be clear in your communication.</strong> Bad grammar and spelling, unclear descriptions, and excessive verbosity will all receive marks deductions.
+        </p>
+        <p>
+            Add <code>notes.txt</code> and any affected files, commit (with a clear commit message), and push. This can be done by right clicking on the file.
+        </p>
+	<p>
+ Continue identifying flaws (code smells) and <strong>fix one per push</strong>. After each fix, make a clear note in <code>notes.txt</code>, then add, commit (with a clear commit message), and push your changes.
+        </p>
+        <p>
+            Run Checkstyle after each fix, and address Checkstyle flaws that are directly associated with the code that you just fixed. By the end of these steps, you should have resolved all the Checkstyle warnings. <strong>You will lose marks if there are any Checkstyle warnings left after your final push.</strong>
+        </p>
+	<p>
+	Here is one flaw that you will fix: A <code>SwitchPath</code> is a piece of Path which can “switch” between a <code>StraightPath</code> and a <code>CornerPath</code>. A description of the <code>SwitchPath</code> is given at the top of the <code>SwitchPath</code> class. To “switch” (or toggle) a <code>SwitchPath</code>, a user should click on it. However, this does not work in our program because the implementation of the <code>SwitchPath</code> class is incorrect and incomplete. Your task is to correct this.
+	</p>
+<!-- 	<p>
+	Here is one feature you can fix. Currently, the treasure hunters pass through the treasure instead of picking it up (and having it to respawn in another location). To fix this, design and implement a way for the treasure to respawn when it is picked up. Make use of existing functions in the code to help.
+	</p> -->
+
+        <h3>
+            Step N-1: finish the comments and Javadoc
+        </h3>
+        <p>
+            It is possible that you added comments and Javadoc while you read through and corrected the code. However, now is the time to go back and make sure that there are enough comments to fully describe each class, that no comment describes easily-read code (forcing the reader to read the same thing twice), and to make sure that the comments match the code (and not a previous version of the code).
+        </p>
+        <p>
+            Include "finalize Javadoc" in <code>notes.txt</code>, and add, commit, and push your changes. If you wrote significant amounts of Javadoc and/or comments in an earlier step, say which one.
+        </p>
+        <h3>
+            Step N: Add at least six new grid squares of path to the map
+	</h3>
+	 <p>
+            Now that your code is beautiful, design and add at least six new grid squares of path to the map. Your extra path should connect to the existing path so that treasure hunters travel over it and back to the original path without leaving the path. You can move the original path to accommodate the new pieces of path so that there are no breaks in the map. You can also change the size (i.e. number of grid pieces) of the map. There are many possibilities, and we're running MOSS to detect similarities, so please do not copy from each other. Whatever path configuration you choose, write the code yourself.
+        </p>
+        <p>
+            Make a final note in <code>notes.txt</code> describing the new configuration of your path. This is not a flaw, so just describe your change in a concise paragraph or bullet-point form after the <code># Step N</code> note header.
+        </p>
+  <h2>Re-mark Requests</h2>
+  <p>If you want someone to re-mark your assignment, you will have to provide us with a list of code/design smells that you identified and the steps where you fix them. To avoid this situation, be clear in your description of each flaw and ask yourself: "Does my fix eliminate this flaw and improve the code according to the SOLID principles of design?"</p>
+  <p> Also, prioritize so that you do not ignore major flaws (according to SOLID) and spend all of your time fixing flaws that are easy to fix, but not particularly problematic. A flaw is <b>problematic</b> if it makes future modifications to your code difficult, or prevents other people from easily adapting your code to their purposes. With this approach, you can maximize your success on this assignment.  </p>    
+	<h2>In Summary:</h2>
+You are to work on the following:
+	<ul>
+	<li>
+	understanding the code, making an inheritance diagram and answering the given questions
+	</li>
+	<li>
+	properly formatting the code
+	</li>
+	<li>
+	redesigning the class structure and fixing internal flaws within the classes, code smells, etc.
+	</li>
+	<li>
+	ensuring correct and sufficient internal comments and Javadoc comments
+	</li>
+	<li>
+	changing the configuration of the paths to accommodate the addition of at least six new grid squares of path
+	</li>
+	<li>
+	recording each activity in the <code>notes.txt</code> file
+	</li>
+	</ul>
+    </body>
+</html>

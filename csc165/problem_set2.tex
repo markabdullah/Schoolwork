@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{fullpage}
+\usepackage{amsmath}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\title{CSC165H1 Problem Set 2 (due 10/25/17)}
+\author{Jacob Nazarenko, James Currier, Mark Abdullah}
+ 
+\begin{document}
+\maketitle
+\begin{enumerate}
+	\item (a) We want to show that $$\forall n \in \N^+,\ Composite(n^2+3n+2)$$
+	\textbf{Proof.} \ Let $n$ be an arbitrary positive natural number. Then we know that \\
+	\begin{align*}
+		n &\geq 1\\
+		n+1 &\geq 2 > 1\\
+		n+2 &\geq 3 > 1
+	\end{align*}
+	Therefore, $$(n+1)(n+2) = (n^2+3n+2) \geq 6 > 1$$\\
+	Let us now define $\neg Prime(p)$: $$\neg Prime(p): p \leq 1 \vee (\exists d \in \N,\ d \mid p \wedge d \neq 1 \wedge d \neq p)$$\\
+	We know that $$(n^2+3n+2) = (n+2)(n+1)$$
+	Therefore, 
+	\begin{align*}
+		(n+1) &\mid (n^2+3n+2)\\
+		(n+2) &\mid (n^2+3n+2)
+	\end{align*}
+	We also know the following:
+	\begin{align*}
+		(n+1) &\neq (n^2+3n+2)\\
+		(n+2) &\neq (n^2+3n+2)\\
+		(n+1) &\neq 1\\
+		(n+2) &\neq 1
+	\end{align*}
+	Therefore, $(n^2+3n+2)$ is not prime. \\\\
+	Because $n \geq 1$, we know that $$(n^2+3n+2) \geq 6 > 1$$\\
+	We have therefore proven the statement true. \null\hfill $\blacksquare$\\\\
+	(b) We want to show that $$\forall n \in \N^+,\ Composite(n^2+6n+5)$$
+	\textbf{Proof.} \ Let n be an arbitrary positive natural number. Then we know that
+	\begin{align*}
+		n &\geq 1\\
+		n+5 &\geq 6 > 1\\
+		n+1 &\geq 2 > 1
+	\end{align*}
+	Therefore, $$(n+1)(n+5) = (n^2+6n+5) \geq 12 > 1$$\\
+	Now consider our previous definition of $\neg Prime(p)$. \\\\
+	We know that $$(n^2+6n+5) = (n+1)(n+5)$$
+	so we also know that 
+	\begin{align*}
+	(n+5) &\mid (n^2+6n+5)\\
+	(n+1) &\mid (n^2+6n+5)
+	\end{align*}
+	where the following is also true:
+	\begin{align*}
+	(n+5) &\neq (n^2+6n+5)\\
+	(n+1) &\neq (n^2+6n+5)\\
+	(n+5) &\neq 1\\
+	(n+1) &\neq 1
+	\end{align*}
+	Therefore, by our previous definition of $\neg Prime(p)$, we have that $(n^2+6n+5)$ is not prime.\\\\
+	We also have that $$(n^2+6n+5) \geq 11 > 1$$\\
+	Therefore, we have proven the statement true. \null\hfill $\blacksquare$\\
+
+	\item For all the following proofs in 2:\\
+	Let $a, b \in \N$. Assume they are not both zero. \\
+
+	(a)  We want to show that $$\exists m \in \mathcal{L}, \forall n \in  \mathcal{L}, m \leq n$$
+	\textbf{Proof.} \ The set L is an infinite set defined as: $$ \mathcal{L} = \{n\in \N^+ : \exists x,y \in \Z, n = ax + by\}$$
+	Define  $\mathcal{L}'$ as: $$  \mathcal{L}' = \{ n \in \mathcal{L}: n \leq a + b\},$$ the finite set of linear combinations of $a$ and $b$ that are less than or 	equal to $a + b$. We know $\mathcal{L}'$ is finite because it only contains positive integers bounded to at most $a + b$. We also know $\mathcal{L}'$ is non-empty because it contains at least $a$ or $b$. Using the fact that any non-empty, finite set of real numbers has a minimum element, we can conclude $ \mathcal{L}'$ has a minimum element. Since every element in $\mathcal{L}$ is greater than or equal to any element $\mathcal{L}'$, this minimum holds for $\mathcal{L}$ as well. \null\hfill $\blacksquare$\\\\
+	(b)  We want to show that $$\forall k \in \N^+, \exists x,y \in \Z, mk = ax + by$$
+	\textbf{Proof.} \ Let $m$ be the minimum element in $\mathcal{L}$. Assume $m \in \mathcal{L}$ such that $\exists x,y \in \Z, m = ax_1 + by_1$. Let $x_1$ and $y_1$ be such values.\\
+	Let $k \in \N^+$, let $x= x_1k$, and let $y=y_1k$. From our assumption, we know $m$ is a linear combination of $a$ and $b$:
+	\begin{align*}
+	m &= ax_1 + by_1\\
+	mk &= ax_1k + by_1k\\
+	mk &= ax + by
+	\end{align*}
+	We've proven that $mk$ is also a linear combination of $a$ and $b$, and that it is therefore in the set $\mathcal{L}$. \null\hfill $\blacksquare$\\\\
+	(c) In order to prove this statement, we must first prove that we may assume the following for the set $\mathcal{L}$ with minimum element $m$:
+	$$\forall c \in \mathcal{L},\ c \geq 0 \wedge c \geq m$$
+	To prove this, let $c$ be an element of $\mathcal{L}$. We know that by the definition of the set $\mathcal{L}$, $c$ must be non-negative, as all of the elements of $\mathcal{L}$ must be positive natural numbers. Therefore, the lowest value that any element of $\mathcal{L}$ can have is 1. If $c \geq 1$, then $c$ must be non-negative. Also, we know that $m$ is defined as an element that is no larger than any other element of $\mathcal{L}$. Therefore, we know that $m \leq c$ for any element $c$ of $\mathcal{L}$, and we have proven this assumption true. We may now proceed to prove the following statement by contradiction: 
+	$$\forall c \in \mathcal{L},\ \exists k \in \Z,\ km = c$$ 
+	\textbf{Proof. (by contradiction)} \ Assume that there is at least one element of the set $\mathcal{L}$ that is not a multiple of $m$ (this is the negation of the above statement): $$\exists c \in \mathcal{L},\ \forall k \in 
+	\Z,\ km \neq c$$
+	Let there be such a value $c$ in $\mathcal{L}$ that makes the expression above true. In this case, we know by the Quotient-Remainder Theorem that $$\exists q, r \in \Z,\ qm + r = c$$ 
+	For the purposes of this proof, let $q = k$ from above. If we follow our assumption that $c$ is not a multiple of $m$, then we know that $0 < r < m$. However, r cannot be between 1 and $m$ because if it were, the number $km + r$ could not be expressed solely as a linear combination of $a$ and $b$. This is because $r$ would have to be less than $m$, and would therefore have to be less than both $a$ and $b$. We have therefore reached a contradiction. $r$ cannot be equal to m, or the whole number would be divisible by $m$, so it must actually be equal to 0. We have thereby proven the original statement to be true. \null\hfill $\blacksquare$ \\\\
+	(d) We want to show that $$m \mid a \wedge m \mid b$$
+	\textbf{Proof.} \ Let $m = ax + by$ be the minimum element in $\mathcal{L}$.\
+	Using the Quotient Remainder Therom, we can express $a$ as follows, $$\exists k,r \in \Z, a = mk + r, \ \text{where}\ 0 \leq r < m$$
+	\begin{align*}
+	r &= a - mk\\
+	r &= a - (ax + by)k\\
+	r &= a - kax - kby\\
+	r &= a(1- kx) + b(-ky)
+	\end{align*}
+	Therefore $r$ is a non-negative linear combination, as $0 \leq r$, but since $m$ is the smallest positive linear combination and $r < m$, hence $r = 0$. Therefore $m \mid a$. \\
+
+	Similarily, using the Quotient Remainder Therom, we can express $b$ as follows, $$\exists k_1,r_1 \in \Z, b = mk_1 + r_1, \ \text{where}\ 0 \leq r_1 < m$$
+	\begin{align*}
+	r_1 &= b - mk_1\\
+	r_1 &= b - (ax + by)k_1\\
+	r_1 &= b - k_1by -  k_1ax\\
+	r_1 &= b(1- k_1y) + a(-k_1x)
+	\end{align*}
+	Therefore $r_1$ is a non-negative linear combination, as $0 \leq r_1$, but since $m$ is the smallest positive linear combination and $r_1 < m$, hence $r_1 = 0$. Therefore $m \mid b$. \null\hfill $\blacksquare$\\\\
+
+	(e) We want to show that $$\forall n \in \N, n \mid a \wedge n \mid b \implies n \mid m$$
+	\textbf{Proof.} \ Let $m = ax + by$ be the minimum element in $\mathcal{L}$. Let $n \in \N$. \\
+	Assume $n \mid a$, such that $\exists k_1 \in \Z, a = k_1n$\\
+	Assume $n \mid b$, such that $\exists k_2 \in \Z, a = k_2n$\\
+	Since m in a linear combination, $$m = ax + by$$
+	By our hypothesis, 
+	\begin{align*}
+	m &= k_1nx + k_2ny\\
+	m &= (k_1x + k_2y)n
+	\end{align*}
+	Since $n$ is a factor of $m$, $n \mid m$. \null\hfill $\blacksquare$\\\\
+
+	(f) We want to show that $$m = gcd(a,b)$$
+	\textbf{Proof.} \ Let $m = ax + by$ be the minimum element in $\mathcal{L}$.\\
+	By the claim in 4e, we know that any natural number that divides $a$ and $b$ must also divide $m$. Therefore the $gcd(a, b)$ must also divide $m$. $$gcd(a,b) \leq m$$\\
+	By the claim in 4d, we know $m$ is a common divisor of $a$ and $b$, and so the greatest common divisor of $a$ and $b$ cannot be less than any other common divisor, in this case $m$. $$gcd(a,b) \nless m$$
+	Thus $gcd(a, b) = m$ \null\hfill $\blacksquare$\\\\
+	(g) We want to show that $$\forall c \in \Z, gcd(a, b) = 1 \wedge a \mid bc \implies a \mid c$$
+	\textbf{Proof.} \ Let $m = ax + by$ be the minimum element in $\mathcal{L}$.\\
+	Assume $gcd(a, b) = 1$\\
+	Assume $a \mid bc$, such that $\exists k_1 \in \Z, bc = ak_1$\\
+	Want to show $a \mid c$, such that  $\exists k_2 \in \Z, c = ak_2$. Let $k_2 = cx + k_1y$\\
+	From the claim in 4f, we know $gcd(a,b) = m$, and equivalently $1 = ax + by$
+	\begin{align*}
+	1 &= ax + by\\
+	c &= c(ax + by)\\
+	c &= cax + cby
+	\end{align*}
+	From our hypothesis, we know $bc = ak_1$
+	\begin{align*}
+	c &= cax + ak_1y\\
+	c &= a(cx + k_1y)\\
+	c &= ak_2
+	\end{align*}
+	We've proven $a \mid c$. \null\hfill $\blacksquare$\\\\
+
+	\item (a) We want to show that $$\textrm{The set } P=\{p \mid Prime(p) \wedge p \equiv 3\ (mod\ 4)\} \textrm{ is infinite}$$
+	\textbf{Proof. (by contradiction)} \ Assume that the set is finite. This means that there is a finite number of primes $\{p_1, p_2,\ ...\ , p_k\}$ that are also congruent to 3 (mod 4). \\\\
+	By the definition of congruence, we know that for any $p_i \in P$, $$4 \mid p_i - 3$$
+	This means that if we divide $p_i$ by 4, we will get a remainder of 3, and consequently means that $$4 \mid p_i + 1$$
+	By the definition of divisibility, this means that $$\exists k_1 \in \Z,\ 4k_1 = p_i+1$$
+	Let a natural number N be defined as the following: $$N = 4(p_1 \times p_2 \times \ ...\ \times p_k) - 1$$
+	By our previous statement, we can see that because $N + 1 = 4(p_1 \times p_2 \times \ ...\ \times p_k)$, we have that $$4 \mid N + 1\ \ \ \textrm{and}\ \ \ 4 \mid N - 3$$
+	Therefore, by our previous statements, $$N \equiv 3\ (mod\ 4)$$
+	We know that there must be a prime number that divides N, but this number cannot be in the set $\{p_1, p_2,\ ...\ , p_k\}$, because if it were, it would divide $N - 4(p_1 \times p_2 \times \ ...\ \times p_k)$, a linear combination of $N$ and itself which is equal to $-1$, and there is no prime number that can divide $-1$. Hence, we can conclude that $N$ itself is a prime number. \\\\
+	Therefore, we have reached a contradiction, because we have shown that $N$ is congruent to 3 (mod 4), that N is a prime number itself, and that it is not one of the prime numbers in the set $P$. Therefore, we can conclude that the set $P$ is infinite, and that there are infinitely many prime numbers congruent to 3 (mod 4). We have proven the original statement. \null\hfill $\blacksquare$ \\
+	
+	\item (a) We want to show that $$\exists n_0 \in \R^{\geq 0},\ \forall n \in \N,\ n\geq n_0 \Rightarrow 0.5n^2 \geq 2n +1650$$
+	\textbf{Proof.}\\
+	Take $n_0 = 60$ \\\\ Let $n \in \N$ \\\\ Assume $n \geq n_0$\\\\
+	\begin{align*}
+		n&\geq 60\\
+		n^2 &\geq 60n\\
+		\frac{1}{2}n^2 &\geq 30n\\
+		\frac{1}{2}n^2 &\geq 2n + 28n\\
+	\end{align*}
+	Since $n\geq 60$, $28n \geq 28(60) = 1680$\\\\
+	So, $$\frac{1}{2} n^2\geq 2n+1680$$\\\\
+	Since $1680 \geq 1650$, $$\frac{1}{2} n^2\geq 2n+1650$$	\null\hfill $\blacksquare$
+	
+	(b)  We want to show that $$\forall a,b \in \R^{\geq 0},\ \exists n_0 \in \N ,\ \forall n \in \R^{\geq 0},\ n\geq n_0 \Rightarrow 0.5n^2 \geq an +b$$
+	\textbf{Proof.}\\
+	Let $a,b\in \R^{\geq 0}$\\\\
+	Take $n_0 = a+\sqrt{a^2+2b}$\\\\
+	Let $n\in \N$\\\\
+	Assume $n\geq n_0$\\
+	\begin{align*}
+		n &\geq a+\sqrt{a^2+2b} \\
+		n-a &\geq \sqrt{a^2+2b} \\
+		(n-a)^2 &\geq a^2+2b \\
+		n^2 - 2an + a^2 &\geq a^2 + 2b \\
+		n^2-2an &\geq 2b \\
+		n^2 &\geq 2an +2b \\
+		0.5n^2 &\geq an+b
+	\end{align*}
+	\null\hfill $\blacksquare$
+\end{enumerate}
+\end{document}

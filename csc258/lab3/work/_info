@@ -1,0 +1,137 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/17.0/csc258/lab3
+vALU
+Z1 !s110 1538610605
+!i10b 1
+!s100 3oE89a?Jzh>hWRNi;SJ:_1
+I5hJk7^cC3_SXIabK4Z>Tk3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1538594555
+Z4 8ALU.v
+Z5 FALU.v
+L0 6
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1538610605.000000
+Z8 !s107 ALU.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|ALU.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+n@a@l@u
+vfulladder
+R1
+!i10b 1
+!s100 ]WfUDMTzfWF8WNRjc:Oz01
+IT^E0T_W4>8Q5R=YHPT]^@3
+R2
+R0
+R3
+R4
+R5
+L0 139
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vmux2to1
+R1
+!i10b 1
+!s100 2:VMS]WGlGM[P3`TMU]N00
+Ii5liOLf=1RfFnzY1=WEUD3
+R2
+R0
+R3
+R4
+R5
+L0 160
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vmux7to1
+!s110 1538593693
+!i10b 1
+!s100 n3Nk9ND6OnY3ngOP]iiz=0
+I17HAgbgCTVT`E<<NicoNO3
+R2
+R0
+w1538257224
+8mux7to1.v
+Fmux7to1.v
+L0 7
+R6
+r1
+!s85 0
+31
+!s108 1538593693.000000
+!s107 mux7to1.v|
+!s90 -reportprogress|300|-timescale|1ns/1ns|mux7to1.v|
+!i113 1
+R10
+R11
+vripplecarryadder
+R1
+!i10b 1
+!s100 B;U9]Kj3A1SEDd1M9h?Uf3
+I00l_33jS^m?=Mk<Pm>R1X2
+R2
+R0
+R3
+R4
+R5
+L0 93
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vsegmentdecoder
+R1
+!i10b 1
+!s100 B_Pf>19WNmdZ@>7[W1gk?2
+IHcieMA:AdYInblGYEQdVI2
+R2
+R0
+R3
+R4
+R5
+L0 170
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

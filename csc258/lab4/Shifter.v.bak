@@ -1,0 +1,8 @@
+module Shifter();
+
+endmodule
+
+module ShifterBit(output, load_val, input, shift, load_n, clk, reset_n);
+	
+
+endmodule

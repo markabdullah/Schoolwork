@@ -1,0 +1,270 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/17.0/csc258/lab5
+vCounter
+Z1 !s110 1539804032
+!i10b 1
+!s100 <g6XWR562SoC9;QbS^R612
+Id<^6g1o:=zOg8JnOXFU6L0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1539725565
+Z4 8Counter.v
+Z5 FCounter.v
+L0 5
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1539804032.000000
+Z8 !s107 Counter.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|Counter.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+n@counter
+vCounterSub
+R1
+!i10b 1
+!s100 `G2jR8:^[3MDLAT<zDYao0
+I;Q?PXZec0>L9;8`95HZC[0
+R2
+R0
+R3
+R4
+R5
+L0 35
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@counter@sub
+vDisplayCounter
+Z12 !s110 1539816724
+!i10b 1
+!s100 R49<V<a]mA^kiV^XJo9f]2
+I7^Illzi]<9;Tj2UzEAaJj2
+R2
+R0
+Z13 w1539816715
+Z14 8Flasher.v
+Z15 FFlasher.v
+L0 80
+R6
+r1
+!s85 0
+31
+Z16 !s108 1539816724.000000
+Z17 !s107 Flasher.v|
+Z18 !s90 -reportprogress|300|-timescale|1ns/1ns|Flasher.v|
+!i113 1
+R10
+R11
+n@display@counter
+vFlasher
+R12
+!i10b 1
+!s100 oIm@><8mKJ:0IIH@9g0h@1
+IK;c@iE@9oeS7E6zco753Q2
+R2
+R0
+R13
+R14
+R15
+L0 7
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+n@flasher
+vflipflop
+Z19 !s110 1539801563
+!i10b 1
+!s100 ?eDoYKUm_]Va^B:[^1d]J3
+IeG6k=PCJ<5QXehQNQmazN2
+R2
+R0
+Z20 w1539801560
+Z21 8morse_decoder.v
+Z22 Fmorse_decoder.v
+L0 241
+R6
+r1
+!s85 0
+31
+Z23 !s108 1539801563.000000
+Z24 !s107 morse_decoder.v|
+Z25 !s90 -reportprogress|300|-timescale|1ns/1ns|morse_decoder.v|
+!i113 1
+R10
+R11
+vmorse_decoder
+R19
+!i10b 1
+!s100 ekMPmWiXIlTJa^g`]KWJd1
+I8^a<g?Y@]Rd@Wz5AnCdm?1
+R2
+R0
+R20
+R21
+R22
+L0 6
+R6
+r1
+!s85 0
+31
+R23
+R24
+R25
+!i113 1
+R10
+R11
+vRateDivider
+R12
+!i10b 1
+!s100 V_W6K`gBB;E<j0MXA=[Q42
+I6JGojg7ZnWaZaUFlLgH7U1
+R2
+R0
+R13
+R14
+R15
+L0 55
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+n@rate@divider
+vsegdecoder
+R12
+!i10b 1
+!s100 223Z`a2`oo0><C3]Sz9@D0
+IL2n`c0fg_3iEM`dCe43`l1
+R2
+R0
+R13
+R14
+R15
+L0 102
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+vsegmentdecoder
+R1
+!i10b 1
+!s100 Pd18Q3m?C2Pg`2X<ondXY1
+IC3hPg9_G3G:Z<c:D^X;9A3
+R2
+R0
+R3
+R4
+R5
+L0 120
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vShifter
+R19
+!i10b 1
+!s100 8hBB_QKASbJM2C4cX@lRm0
+I`o]LP;n=?Cgd6_O?;]XzS3
+R2
+R0
+R20
+R21
+R22
+L0 81
+R6
+r1
+!s85 0
+31
+R23
+R24
+R25
+!i113 1
+R10
+R11
+n@shifter
+vShifterBit
+R19
+!i10b 1
+!s100 bHPeMe8@:V4EMcJOnWB[T0
+ITV]oE<Hc`1_Yk?MP<Nl091
+R2
+R0
+R20
+R21
+R22
+L0 222
+R6
+r1
+!s85 0
+31
+R23
+R24
+R25
+!i113 1
+R10
+R11
+n@shifter@bit
+vTFlipFlop
+R1
+!i10b 1
+!s100 l:^5EEo9id_i;@ZD2j`]>3
+I_cDG7800?[n4D:IM1QN5c2
+R2
+R0
+R3
+R4
+R5
+L0 107
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@t@flip@flop

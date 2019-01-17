@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\allowdisplaybreaks
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+
+\title{CSC236 Problem Set 1}
+\author{Jacob Nazarenko, James Currier, Mark Abdullah}
+ 
+\begin{document}
+\maketitle
+\begin{enumerate}
+	
+	\item \textbf{Proof (by simple induction):} \\\\
+	Let the predicate $P(n)$ be defined as follows: $$P(n): 4 \mid (3^{2n}-5^n)$$
+	\textbf{Claim:} $$\forall n \in \N,\ P(n)$$
+	\textbf{Base case:} $(n = 0)$ \\ $$3^0 - 5^0 = 0\ \ \textrm{and}\ \ 4 \mid 0\ \ \textrm{so}\ \ P(0)\ \textrm{holds}$$
+	\textbf{Inductive Step:} Let $k$ be an arbitrary natural number, and assume that $P(k)$ holds, that is, 
+	$$4 \mid (3^{2k}-5^k)\ \ \ \ \ \ \ \textrm{(IH)}$$
+	WTP that $P(k+1)$ holds. By our inductive hypothesis and the definition of divisibility, we know that 
+	$$\exists c \in \Z,\ 4c = (3^{2k}-5^k)$$
+	Also, let $d$ be an integer defined as $d = 9c + 5^k$. Applying the above statement, we may proceed as follows:
+	\begin{align*}
+		3^{2(k+1)} - 5^{k+1} &= 3^{2k+2} - 5^{k+1} \\
+		&= 9(3^{2k}) - 5(5^k) \\
+		&= 9(3^{2k}-5^k) + 4(5^k) \\
+		&= 9(4c) + 4(5^k) \ \ \ \ \ \ \ \textrm{(by IH)} \\
+		&= 4(9c) + 4(5^k) \\
+		&= 4(9c + 5^k) \\
+		&= 4d
+	\end{align*}
+	We have thereby shown that $\exists d \in \Z,\ 4d = 3^{2(k+1)} - 5^{k+1}$, which by definition of divisibility means that 4 divides $3^{2(k+1)} - 5^{k+1}$ \\\\
+	\textbf{Conclusion:} By the Principle of Simple Induction, we have proven that $P(n)$ holds for all natural numbers. \null\hfill $\blacksquare$ \\
+	
+	\item Let the function $f(n)$ be defined as follows:
+	\[
+	f(n) = 
+	\begin{cases}
+	n, & 1 \leq n < 3 \\
+	f(\floor{\frac{n}{3}}) + f(\floor{\frac{2n}{3}}), & n \geq 3
+	\end{cases}
+	\]
+	WTP that for all natural numbers $n\geq 1$, $f(n) \leq 2n -1$. \\\\
+	\textbf{Proof (by strong induction):} \\\\
+	Let the predicate $P(n)$ be defined as the following: $$P(n): f(n) \leq 2n -1$$
+	\textbf{Claim:} $$\forall n \in \N,\ n \geq 1 \Rightarrow P(n)$$
+	\textbf{Base cases:} \\\\ There are two base cases for this function, namely $(n = 1)$ and $(n = 2)$ \\\\
+	For $(n = 1)$, $f(1) = 1 \leq 1$, so $P(1)$ holds true. \\
+	For $(n = 2)$, $f(2) = 2 \leq 3$, so $P(2)$ holds true. \\\\
+	\textbf{Inductive step:} Let $k$ be an arbitrary natural number greater than or equal to 3, and assume that 
+	$$\forall j \in \N,\ 1 \leq j < k \Rightarrow P(j)\ \ \ \ \ \ \ \ \textrm{(IH)}$$
+	WTP that $P(k)$ holds. \\
+	\\
+	Since $k \geq 3$, $$1 = \frac{3}{3} \leq \frac{k}{3} \leq \frac{2k}{3} < \frac{3k}{3} = k$$
+	\\Since 1 is an integer, and $k-1$ is the smallest integer less than k, 
+	$$1\leq \bigg\lfloor{\frac{k}{3}} \bigg \rfloor \leq \bigg\lfloor{\frac{2k}{3}} \bigg \rfloor \leq k-1$$
+	\\Then by our Inductive Hypothesis,
+	$$f\bigg(\bigg\lfloor{\frac{k}{3}} \bigg \rfloor\bigg) \leq 2\bigg(\bigg\lfloor{\frac{k}{3}} \bigg \rfloor\bigg)-1 \leq \frac{2k}{3}-1$$
+	And also, $$ f\bigg(\bigg\lfloor{\frac{2k}{3}} \bigg \rfloor\bigg) \leq 2\bigg(\bigg\lfloor{\frac{2k}{3}} \bigg \rfloor\bigg)-1 \leq
+	 \frac{4k}{3}-1$$\\
+	 Since $f(k) = f\bigg(\bigg\lfloor{\displaystyle\frac{k}{3}} \bigg \rfloor\bigg) + f\bigg(\bigg\lfloor{\displaystyle\frac{2k}{3}} \bigg \rfloor\bigg)$,
+	 $$f(k) \leq \frac{2k}{3}-1 + \frac{4k}{3} - 1 = 2k -2$$
+	 $$f(k) \leq 2k-1$$
+	 $$P(k)$$ 
+	
+	\textbf{Conclusion:} By the Principle of Strong Induction, we have proven that the $P(n)$ holds for all natural numbers greater than or equal to 1. \null\hfill $\blacksquare$ \\
+	
+	\item \textbf{Proof (by Principle of Well Ordering):} \\\\
+	Let the predicate $P(n)$ be defined as $P(n): \exists k, m \in \N,\ Odd(m) \wedge n = 2^k*m$. WTP that $$\forall n \in \N,\ n \geq 1 \Rightarrow P(n)$$
+	Now let us assume that $\exists n \in \N,\ n \geq 1 \wedge \neg P(n)$, and let the set $S$ be defined as the subset of natural numbers such that a number $k$ is in $S$ if and only if $P(k)$ is false: $$S = \{k \in \N \mid P(k)\ \textrm{is false}\}$$
+	Let us assume that the set $S$ is non-empty. By the Principle of Well Ordering, set $S$ must have a smallest element $a \in S$. We must show that for all natural numbers $k$ and $m$ (where m is an odd number), we cannot have $a = 2^k*m$. \\\\
+	First, let us consider the case where $a$ is odd. If we let $k = 0$ and $m=a$, then $P(a)$ will always be true, as $2^0*a = a$. \\\\
+	Next, we will consider the case where $a$ is even. If we divide $a$ by 2, we obtain a number that is outside the set $S$, and can therefore be expressed as $2^k*m$ for some natural numbers $k$ and $n$. However, this also shows that $a$ must follow the rule, because if $2^k*m=\frac{a}{2}$, then $a=2^{k+1}*m$. We have thereby shown that even if $a$ is an even number, then it still must follow the rule. \\\\
+	We now see that any smallest element $a$ must actually follow the rule, regardless of whether it is even or odd. We have therefore reached a contradiction to our original assumption. \\\\
+	\textbf{Conclusion:} We may now conclude that by the Principle of Well Ordering, we have proven the original statement true, that is, that $P(n)$ holds for all natural numbers greater than or equal to 1. \null\hfill $\blacksquare$ \\
+	
+	\item In order to prove this statement, we must first prove, by simple induction, that $\forall n \in \N,\ Even(5^n+1)$ \\\\
+	Let the predicate $Q(n)$ be defined as $Q(n): Even(5^n+1)$. Our claim is that $\forall n \in \N,\ Q(n)$ \\\\
+	Base case: $(n = 0)$; If $n = 0$, then $5^n+1 = 2$, and 2 is an even number, as it is divisible by 2. $Q(0)$ therefore holds. \\\\
+	Inductive step: Let k be an arbitrary natural number, and assume that $P(k)$ holds true [IH]. WTP that $P(k+1)$ holds true. By our IH, we know that $5^k+1$ is even, that is, that there exists an integer $i$ such that $2i = 5^k+1$. We can then rearrange $5^{k+1}+1$ as follows:
+	\begin{align*}
+		5^{k+1}+1 &= 5(5^k) + 1 \\
+		&= 5(5^k+1)-4 \\
+		&= 5(2i)-2(2)  \\
+		&= 2(5i-2)
+	\end{align*} 
+	We now see that $5^{k+1}+1$ is the product of 2 and an integer equal to $5i-2$, which, by the definition of divisibility, means that $5^{k+1}+1$ is an even number. \\\\
+	In conclusion, we've proven by the Principle of Simple Induction that $Q(n)$ is true for all natural numbers. We may now proceed to prove the original statement, by proving that the number of zeros in any string in set $S$ is even. \\\\
+	\textbf{Proof (by structural induction:)} \\\\
+	Let the predicate $P(n)$ be defined as follows: $$P(n): \textrm{``The number of zeros in string n is odd"}$$ \\\\
+	\textbf{Claim:} $$\forall n \in S,\ P(n)$$
+	\textbf{Base case:} $(n = ``0")$; There is 1 zero in the string, and 1 is an odd number, so $P(``0")$ holds true. \\\\
+	\textbf{Inductive step:} Let $j$ and $k$ be arbitrary strings in set $S$, and assume $P(k)$ holds and $P(j)$ holds [IH]. WTP that the predicate $P$ holds for any construction derived from strings $j$ and $k$ that is also in set $S$, namely $j0k$, $1j2$, and $0j0$. We must consider these three separate cases: \\\\
+	Case 1: $P(j0k)$; We know from our IH that $j$ and $k$ both have odd numbers of zeros in them. By combining them with an extra 0, we will therefore end up with an odd number of zeros, as the sum of odd numbers is an even number, and the sum of an even number and 1 (from the extra added 0) is odd. \\\\
+	Case 2: $P(1j2)$; We know from our IH that $j$ has an odd number of zeros. Combining it with 1 and 2 does not change the number of zeros in the string, so the result will also have an odd number of zeros. \\\\
+	Case 3: $P(0j0)$; We know from our IH that $j$ has an odd number of zeros. Combining it with 2 zeros will once again create an odd number of zeros, as the sum of an odd number and an even number (in this case 2) will always be an odd number. \\\\
+	\textbf{Conclusion:} By the Principle of Structural Induction, we have shown that in all three cases, we obtain an odd number of zeros, and therefore that $P(n)$ will hold true for all string in $S$. Combining this conclusion with the conclusion of the preceding proof, we can say that because $5^k+1$ will always produce an even number and all of the strings in $S$ have an odd number of zeros, that for any arbitrary natural number $k$, there is no string in $S$ that will have $5^k+1$ zeros. \null\hfill $\blacksquare$ \\
+	
+	\item For this proof, let us define a way of referring to each element in $A$ as a set of three numbers. For example, if $a_{m,n}=x$, then we can refer to this element as $(m,n,x)$. The following is a restatement of the recursive definition of $A$ in terms of this method: 
+	\begin{itemize}
+		\item $(0,0,0) \in A$
+		\item for every $(m,0,x) \in A,\ m \geq 0$, then $(m+1,0,x+1) \in A$
+		\item for every $(m,n,y) \in A,\ m \geq 0,\ n \geq 0$, then $(m,n+1,y+n+1) \in A$
+		\item nothing else belongs in A.
+	\end{itemize}
+	\textbf{Proof (by structural induction):} \\\\
+	Let the predicate $P((a,b,c))$ be defined as: $$P((a,b,c)): c = a+\frac{b(b+1)}{2}$$
+	\textbf{Claim:} $$\forall (a,b,c) \in A,\ P((a,b,c))$$
+	\textbf{Base case:} $$P((0,0,0))\ \textrm{holds, because}\ 0 = 0 + \frac{0(0+1)}{2}$$
+	\textbf{Inductive step:} Let $(x,y,z)$ be an arbitrary element of $A$, and assume $P((x,y,z))$ holds. WTP that $P$ applied to all constructions derived from $(x,y,z)$ by the recursive definition above will hold true. \\\\
+	There are 3 cases we must consider: 2 cases where $y=0$ and 1 case where $y>0$. \\\\
+	Case 1: $(x,0,z) \in A$, so $(x+1,0,z+1) \in A$ \\\\
+	We know by our IH that $z=x+\frac{0(0+1)}{2}=x$, so if we replace $z$ with $x$ in the newly created element above, we see that it holds true (because $z+1=x+1+\frac{0(0+1)}{2}$), which proves that $(x+1,0,z+1)$ follows the rule. \\\\
+	Case 2: $(x,0,z) \in A$, so $(x,1,z+1) \in A$ \\\\
+	We know by our IH that $z=x+\frac{0(0+1)}{2}=x$, so if we plug in $y=1$ and replace $z$ with $z+1$ (which by our IH is equivalent to $x+1$), then we see that once again we get the same result on both sides: $z+1=x+1=x+\frac{1(1+1)}{2}$, which suggests that this case also follows the rule. \\\\
+	Case 3: $(x,y,z) \in A,\ y>0$, so $(x,y+1,z+y+1) \in A$ \\\\
+	We know by our IH that $z=x+\frac{y(y+1)}{2}$, and if we replace $z$ with $x+\frac{y(y+1)}{2}$ (from our IH) in the the newly created element above, then we see that it also follows the rule: \begin{align*}
+		z+y+1&=x+\frac{y(y+1)}{2}+y+1 \\
+		&= x+(y+1)(\frac{y}{2}+2) \\
+		&= x+\frac{(y+1)(y+2)}{2}
+	\end{align*}
+	which is consistent with the values of $x$, $y$, and $z$ in the newly created element. \\\\
+	\textbf{Conclusion:} By the Principle of Structural Induction, we have proven that $P((a,b,c))$ holds true for all $(a,b,c) \in A$. \null\hfill $\blacksquare$ \\
+		
+\end{enumerate}
+\end{document}

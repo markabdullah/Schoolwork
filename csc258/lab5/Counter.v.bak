@@ -1,0 +1,22 @@
+module Counter(Q, enable, clock, cleab_b);
+	output [7:0] Q;
+	input enable, clock, clear_b;
+	
+	
+
+
+endmodule
+
+module TFlipFlop(Q, enable, clock, clear_b);
+	output reg Q;
+	input enable, clock, clear_b;
+	
+	always(posedge clock, negedge clear_b)
+	begin
+		if(clear_b == 0)
+			Q <= 0;
+		else
+			Q <= T ^ Q;
+	end
+endmodule
+

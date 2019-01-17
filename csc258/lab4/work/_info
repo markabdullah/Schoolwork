@@ -1,0 +1,181 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/17.0/csc258/lab4
+vflipflop
+Z1 !s110 1539217439
+!i10b 1
+!s100 JQ]aG:GdlI?1KYF>B[8fe0
+IP5<k13?_^8eDfSY=F0@@10
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1539127562
+Z4 8Shifter.v
+Z5 FShifter.v
+L0 124
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1539217439.000000
+Z8 !s107 Shifter.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|Shifter.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vfulladder
+Z12 !s110 1539719075
+!i10b 1
+!s100 _VfKmM3JdKkX^eMYjQ`ll1
+ICEohOd?]N4bbbY6[AP`3P0
+R2
+R0
+Z13 w1539123714
+Z14 8regALU.v
+Z15 FregALU.v
+L0 153
+R6
+r1
+!s85 0
+31
+Z16 !s108 1539719075.000000
+Z17 !s107 regALU.v|
+Z18 !s90 -reportprogress|300|-timescale|1ns/1ns|regALU.v|
+!i113 1
+R10
+R11
+vmux2to1
+R12
+!i10b 1
+!s100 cb3E;]9R4:3JgcL`zXNFa0
+I0ib;>i=7H`kIB8K1RO[CP3
+R2
+R0
+R13
+R14
+R15
+L0 174
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+vregALU
+R12
+!i10b 1
+!s100 iNb?f2cK>T:4C=Li4iTga1
+IME1fdB0V2b77EB>]5f4jX1
+R2
+R0
+R13
+R14
+R15
+Z19 L0 10
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+nreg@a@l@u
+vripplecarryadder
+R12
+!i10b 1
+!s100 dnISj41ST?W=A:ijXb6dO0
+I`GW7[;X[D02HCeJOjjBA[3
+R2
+R0
+R13
+R14
+R15
+L0 107
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+vsegmentdecoder
+R12
+!i10b 1
+!s100 W3X>h6_:PRa30X;_H0BG@1
+IXWin6V8CDlRmmZ?gjAVJn1
+R2
+R0
+R13
+R14
+R15
+L0 184
+R6
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 1
+R10
+R11
+vShifter
+R1
+!i10b 1
+!s100 FGMBmGW8lNP3UcehkQ5h;3
+Im<jXOkbI_E3;g:a]GONXR2
+R2
+R0
+R3
+R4
+R5
+R19
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@shifter
+vShifterBit
+R1
+!i10b 1
+!s100 ^1jPnhLO=zRR0QJn>h2Tk2
+Ize;YML^O;SS:5iZE6V_BX2
+R2
+R0
+R3
+R4
+R5
+L0 105
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@shifter@bit

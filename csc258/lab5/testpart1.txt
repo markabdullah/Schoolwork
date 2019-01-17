@@ -1,0 +1,21 @@
+vlib work
+vlog -timescale 1ns/1ns Counter.v
+vsim Counter
+log {/*}
+add wave {SW[1:0]}
+add wave {KEY[0]}
+add wave {LEDR[7:0]}
+add wave {HEX1[6:0]}
+add wave {HEX0[6:0]}
+
+force {KEY[0]} 0 0, 1 10 -r 20
+
+force {SW[0]} 0 0, 1 20
+force {SW[1]} 1 0
+
+run 120ns
+
+
+
+
+

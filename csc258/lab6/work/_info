@@ -1,0 +1,137 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.0/csc258/lab6
+vcontrol
+Z0 !s110 1541019634
+!i10b 1
+!s100 iHFeDL2eU?5W]LL67C=[02
+I96ZM7X2lKh>MIL`^GLYSm3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/intelFPGA_lite/17.0/csc258/Lab6
+Z3 w1540931484
+Z4 8poly_function.v
+Z5 Fpoly_function.v
+L0 99
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1541019634.000000
+Z8 !s107 poly_function.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|poly_function.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vdatapath
+R0
+!i10b 1
+!s100 @_bcIM_LLA;bK?SNVFJHK0
+I:0<9jXY>93OAmEl4VNE211
+R1
+R2
+R3
+R4
+R5
+L0 224
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vFSM
+!s110 1542075955
+!i10b 1
+!s100 6g4nCcW1RBIzIn:4^mc892
+IQaKS^F@]W>2W>jgGk=02Y1
+R1
+R2
+w1540837153
+8FSM.v
+FFSM.v
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1542075955.000000
+!s107 FSM.v|
+!s90 -reportprogress|300|-timescale|1ns/1ns|FSM.v|
+!i113 1
+R10
+R11
+n@f@s@m
+vhex_decoder
+R0
+!i10b 1
+!s100 g;4NG7SVRz=`c<[e5V]OR1
+IYIGH?]6`;Zd4bkhO4W@CF1
+R1
+R2
+R3
+R4
+R5
+L0 321
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vpart2
+R0
+!i10b 1
+!s100 mJU]fEif:ezB6a8LO=Xzj1
+IzYjA:`1D4l4EJR9ZFcOoz3
+R1
+R2
+R3
+R4
+R5
+L0 45
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vpoly_function
+R0
+!i10b 1
+!s100 `ROFE4AN;k@eGzj?>Hj^Q0
+IYG]f3GVR`<TO]flFVaDmK0
+R1
+R2
+R3
+R4
+R5
+L0 9
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

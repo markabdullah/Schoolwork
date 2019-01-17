@@ -1,0 +1,44 @@
+vlib work
+vlog -timescale 1ns/1ns part2.v
+vsim datapath
+
+
+log {/*}
+add wave {clock}
+add wave {reset} 
+add wave {data_in}
+add wave {ld_x}
+add wave {ld_y}
+add wave {counter}
+add wave {colour}
+add wave {temp_x}
+add wave {temp_y}
+add wave {x}
+add wave {y}
+add wave {c}
+
+
+force {clock} 0 0, 1 5 -r 10
+force {reset} 0 0, 1 10
+
+force {colour[2]} 1 0
+force {colour[1]} 0 0
+force {colour[0]} 1 0
+
+force {data_in[6]} 0 0
+force {data_in[5]} 0 0
+force {data_in[4]} 0 0
+force {data_in[3]} 1 0
+force {data_in[2]} 1 0
+force {data_in[1]} 1 0 
+force {data_in[0]} 0 0 
+
+force {ld_x} 0 0, 1 5, 0 20
+force {ld_y} 0 0, 1 20, 0 35
+
+run 300ns
+
+
+
+
+

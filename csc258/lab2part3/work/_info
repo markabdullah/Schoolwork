@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/17.0/csc258/lab2part3
+vmux4to1
+!s110 1537932286
+!i10b 1
+!s100 B[j?72iT36I2BbbK]nIF>1
+IP:[HBkX]EQlMjPhIg`g4o0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1537931856
+87segmentdecoder.v
+F7segmentdecoder.v
+L0 5
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1537932286.000000
+!s107 7segmentdecoder.v|
+!s90 -reportprogress|300|-timescale|1ns/1ns|7segmentdecoder.v|
+!i113 1
+Z3 o-timescale 1ns/1ns
+Z4 tCvgOpt 0
+vsegmentdecoder
+!s110 1537934526
+!i10b 1
+!s100 F]?h@eToBaKIWNU>:WmCF3
+IL<567=GG=gmOTHeT;Z61F3
+R1
+R0
+w1537934082
+8segmentdecoder.v
+Fsegmentdecoder.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1537934526.000000
+!s107 segmentdecoder.v|
+!s90 -reportprogress|300|-timescale|1ns/1ns|segmentdecoder.v|
+!i113 1
+R3
+R4

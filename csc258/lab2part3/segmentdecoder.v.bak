@@ -1,0 +1,27 @@
+//SW[3:0] data inputs
+
+//HEX0[6:0] output display
+
+module segmentdecoder(HEX0, SW);
+   input [3:0] SW;
+   output [6:0] HEX0;
+	assign c0 = SW[0];
+	assign c1 = SW[1];
+	assign c2 = SW[2];
+	assign c3 = SW[3];
+	
+	assign HEX0 = ~c3 & ~c2 & ~c1 & c0 | ~c3 & c2 & ~c1 & ~c0 | c3 & c2 & ~c1 & c0 | c3 & ~c2 & c1 & c0;
+	assign HEX1 = ~c3 & c2 & ~c1 & c0 | c2 & c1 & ~c0 | c3 & c1 & c0 | c3 & c2 & ~c0;
+	assign HEX2 = ~c3 & ~c2 & c1 & ~c0 | c3 & c2 & ~c0 | c3 & c2 & c1;
+	assign HEX3 = ~c3 & c2 & ~c1 & ~c0 | c3 & ~c2 & c1 & ~c0 | ~c2 & ~c1 & c0 | c2 & c1 & c0;
+	assign HEX4 = ~c3 & c2 & ~c1 | ~c2 & ~c1 & c0 | ~c3 & c0;
+	assign HEX5 = c3 & c2 & ~c1 & c0 | ~c3 & c1 & c0 | ~c3 & ~c2 & c0 | ~c3 & ~c2 & c1;
+	assign HEX6 = c3 & c2 & ~c1 & ~c0 | ~c3 & c2 & c1 & c0 | ~c3 & ~c2 & ~c1;
+	
+	
+endmodule
+
+
+
+
+

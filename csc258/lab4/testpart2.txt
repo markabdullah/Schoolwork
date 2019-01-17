@@ -1,0 +1,40 @@
+vlib work
+vlog -timescale 1ns/1ns regALU.v
+vsim regALU
+log {/*}
+add wave {SW[9]}
+add wave {SW[7:5]}
+add wave {SW[3:0]}
+add wave {KEY[0]}
+add wave {LEDR[7:0]}
+add wave {HEX0[6:0]}
+#add wave {HEX1[6:0]}
+#add wave {HEX2[6:0]}
+#add wave {HEX3[6:0]}
+add wave {HEX4[6:0]}
+add wave {HEX5[6:0]}
+
+#force {SW[7]} 0 0, 1 80 -r 160
+#force {SW[6]} 0 0, 1 40 -r 80
+#force {SW[5]} 0 0, 1 20 -r 40
+#force {SW[4]} 0 0, 1 10 -r 20
+
+#ALU function values
+force {SW[7]} 0 0, 1 80 -r 160
+force {SW[6]} 0 0, 1 40 -r 80
+force {SW[5]} 0 0, 1 20 -r 40
+force {SW[9]} 0 0, 1 10 -r 20
+force {KEY[0]} 0 0, 1 10 -r 20
+
+#first number
+force {SW[3]} 0
+force {SW[2]} 1
+force {SW[1]} 1
+force {SW[0]} 0
+
+run 160ns
+
+
+
+
+

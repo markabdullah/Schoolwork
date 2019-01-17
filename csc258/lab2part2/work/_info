@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/17.0/csc258/lab2part2
+vmux2to1
+Z1 !s110 1537917900
+!i10b 1
+!s100 ]SJO]DXiEzZh?_cbC_5VR3
+IglRK`SG9WES4U1QfLeiKQ3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1537647981
+Z4 8mux4to1.v
+Z5 Fmux4to1.v
+L0 37
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1537917899.000000
+Z8 !s107 mux4to1.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|mux4to1.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vmux4to1
+R1
+!i10b 1
+!s100 <W^m?J@nLJVUL5gLLJ6HV3
+IiHM@kR3`mlEciF79=9@ZN3
+R2
+R0
+R3
+R4
+R5
+L0 7
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

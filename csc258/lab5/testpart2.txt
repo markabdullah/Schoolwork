@@ -1,0 +1,31 @@
+vlib work
+vlog -timescale 1ns/1ns Flasher.v
+vsim Flasher
+log {/*}
+add wave {SW[4:0]}
+add wave {LEDR[3:0]}
+add wave {HEX0[6:0]}
+add wave {CLOCK_50}
+add wave {count}
+add wave {q}
+
+force {CLOCK_50} 1 0, 0 5 -r 10
+
+force {SW[0]} 1
+force {SW[1]} 1
+
+#enable
+force {SW[2]} 1
+
+#par_load
+force {SW[3]} 0
+
+#reset on 0
+force {SW[4]} 0 0, 1 30
+
+run 320ns
+
+
+
+
+

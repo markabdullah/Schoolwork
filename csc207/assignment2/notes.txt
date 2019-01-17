@@ -1,0 +1,219 @@
+########
+# Step 
+Code Affected:
+Flaw:
+Fix:
+
+########
+# Step 1
+Code Affected: None
+Created this file.
+
+########
+# Step 2
+Code Affected: all .java files
+Reformatted using Googles Java style formatter.
+
+########
+# Step 3
+Code Affected: Path.leave
+Flaw: unnecessary if, duplication code
+Fix: replaced if with single assignment statement
+
+########
+# Step 4
+Code Affected: Map.paint, Map.update
+Flaw: unused code that just calls repaint
+Fix: deleted the methods
+
+########
+# Step 5
+Code Affected: Person2 Class, IslandSimulation.main
+Flaw: Person2 class is a duplicate of Person1 class
+Fix: deleted Person2 class and changed initalization of people[1] in main
+
+########
+# Step 6
+Code Affected: Classes Person, Person1, IslandSimulation.main
+Flaw: Person1 is an unnecessary child class of Person
+Fix: Merged Person1's addToPath method into Person. Deleted class Person1. Adjusted initalization in IslandSimulation.main 
+
+########
+# Step 7
+Code Affected: IslandSimulation
+Flaw: The map and person array variables were static, but being accessed through an instance variable.
+Fix: Made the static variables non-static.
+
+########
+# Step 8
+Code Affected: CrossPath.exitOk
+Flaw: Unnecessary method call to equals since a crosspath can be exited in all directions
+Fix: Returns true always.
+
+########
+# Step 9
+Code Affected: MapPanel
+Flaw: Useless Paths variables
+Fix: Changed parameter name, instead of creating variable to assign parameter to.
+
+########
+# Step 10 
+Code Affected: Path.enter
+Flaw: Doesn't check if path is Occupied 
+Fix: Added conditional to check if the path is occupied
+
+########
+# Step 11
+Code Affected: TreasureHunter
+Flaw: move method has extra lines of code
+Fix: simplified and shortened the move method
+
+########
+# Step 12
+Code Affected: *.java
+Flaw: Bad variable names.
+Fix: rewrote more decriptive variable names.
+
+########
+# Step 13
+Code Affected: TreasureHunter and Path
+Flaw: clean up
+Fix: moved call to repaint from treasureHunter.move to path.enter.
+
+########
+# Step 14
+Code Affected: Path and TreasureHunter
+Flaw: SetStrokes for graphics missings
+Fix: Replaced the missing lines to setStrokes for g2
+
+########
+# Step 15
+Code Affected: Person.addToPath
+Flaw: Unnessesary code (while loop, local variables set to parameters,etc.)
+Fix: Removed excess code and local variables
+
+########
+# Step 16
+Code Affected: Class Map
+Flaw: Bad Design, extra lines of code, bad variables names, accessability levels, etc.
+Fix: Merged lines of code, changed access levels for variables and methods, removed print statements
+
+########
+# Step 17
+Code Affected: Class Map, Person, TreasureHunter
+Flaw: groups of related actions split into different methods.
+Fix: Combined Map.addCar into the Map.addPerson method. Fixed an assignment statement inside of an if statement in TreasureHunter.move.
+
+########
+# Step 18
+Code Affected: IslandSimulation
+Flaw: Variable storing the map is an array of maps when we only need 1.
+Fix: Changed the array of maps to a single Map variable
+
+########
+# Step 19
+Code Affected: Class Map, SwitchPath
+Flaw: Repetitive calls to connect path in Maps init, SwichPath doesn't return correct path or direction in register/unRegister/exit/nextPath.
+Fix: Replaced repetitive calls with a helper method, connectPath. Fixed methods in SwitchPath to return correct object.
+
+########
+# Step 20
+Code Affected: SwitchPath, TreasureHunter
+Flaw: When treasurehunter moves, it doesnt check if the switch path is open or closed from its direction.
+Fix: Overrode enter method in SwitchPath to check if the treasurehunter can enter or not.
+
+########
+# Step 21
+Code Affected: Path.enter
+Flaw: Setting hasTreasure to false after calling spwantreasure will be incorrect if it was spwaned on the same path.
+Fix: Changed order of calling methods and setting boolean hasTreasure value.
+
+########
+# Step 22
+Code Affected: TrasureHunter
+Flaw: TreasureHunter methods switchStraight and switchCorner should not be in treasurehunter and are unused. The variable nextTreasureHunter is also unused.
+Fix: Removed the methods and variable.
+
+########
+# Step 23
+Code Affected: Subclasses of Path
+Flaw: The subclasses of path contained an extra constructor that was not used.
+Fix: removed the unused constructors.
+
+########
+# Step 24
+Code Affected: All classes
+Flaw: General accessor level are too high, extra whitespace.
+Fix: Changed many access levels to private/protected, cleaned up extra whitespace in the code. 
+
+########
+# Step 25
+Code Affected: Direction, Path and subclasses
+Flaw: Direction class can be simplified
+Fix: Changed the direction class to an enum, and modified the classes to adjust for it.
+
+########
+# Step 26
+Code Affected: TwoEndPath, SwtichPath, CrossPath
+Flaw: validDir method contained redundant lines of code(made a new exception and printed its stack), and itself was unneeded since the methods who called it already had to perform the check it did.
+Fix: Removed validDir from the three classes, changed the methods register, unregister, nextPath, and exit to check if the given parameter is valid.
+
+########
+# Step 27
+Code Affected: Path.enter, SwitchPath.enter
+Flaw: According to the forum, hunters can enter a switchpath on the gray part, and there can be more then 1 hunter on a path at a time, which this does not currently allow.
+Fix: Removed overriden enter method from SwitchPath as it has become useless with this information, changed Path.enter to allow for more than 1 hunter on a path.
+
+########
+# Step 28
+Code Affected: SwitchPath, CrossPath
+Flaw: Unused constructors
+Fix: Removed them
+
+########
+# Step 29 (Forgot to note previously)
+Code Affected: Class Path
+Flaw: Path can be converted into an abstract class.
+Fix: Changed class Path to an abstract class. 
+
+########
+# Step 30
+Code Affected: IslandSimulation
+Flaw: ThreadGroup Array not being used.
+Fix: Removed the array variable.
+
+########
+# Step 31
+Code Affected: Map.spawnTreasure
+Flaw: Method is printing to console.
+Fix: Removed the print statement.
+
+########
+# Step 32
+Code Affected: IslandSimulation
+Flaw: The simulation started before the run button is clicked.
+Fix: Removed the person start() calls from the main method so it doesnt automatically start.
+
+########
+# Step 33
+Code Affected: All classes
+Flaw: Javadocs either missing or contain HOW the method does what it does, rather then just what it does.
+Fix: Completed javadocs or modified existing comments to explain what the piece of code does.
+
+########
+# Step 34
+Code Affected: Map
+Flaw: Constructor can be simplified
+Fix: Made a helper method buildMapPaths, to create the path pieces. Also moved some other lines from the constructor into buildMapPanel.
+
+########
+# Step 35
+Code Affected: Map
+Flaw: Background colour was not being set to green as it should be.
+Fix: Set the background colour before the paths were added. Now it is green.
+
+########
+# Step 36
+Code Affected: Map
+Flaw:
+Fix: Added a new extension to the map in the lower right corner. The new extension contains an oval track, with two switchPaths in the middle for shortcuts.

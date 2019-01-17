@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/17.0/csc258/Lab7
+vcontrol
+Z1 !s110 1542233535
+!i10b 1
+!s100 ;V5n;DogT_;mUT_lhA>SH0
+I5_ok=ff_M_JS_OUnhKeCX1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1542163256
+Z4 8part2.v
+Z5 Fpart2.v
+L0 164
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1542233535.000000
+Z8 !s107 part2.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vdatapath
+R1
+!i10b 1
+!s100 VL35J?@C0fj>zE_QQ<_oS2
+IjN6zKAU5Xh7:E[4aZOmCo2
+R2
+R0
+R3
+R4
+R5
+L0 105
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vpart2
+R1
+!i10b 1
+!s100 z@<Gi?z6_^cm4YbBWd6oJ3
+IKLLbmIJW7XUYX5D9d`KXn2
+R2
+R0
+R3
+R4
+R5
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vram32x4
+!s110 1542145940
+!i10b 1
+!s100 ;^BLTO6lghzZ?IMklD^:U3
+Iio8^lo9>nTYQN^PFXC`NI2
+R2
+R0
+w1542145933
+8ram32x4.v
+Fram32x4.v
+L0 40
+R6
+r1
+!s85 0
+31
+!s108 1542145940.000000
+!s107 ram32x4.v|
+!s90 -reportprogress|300|-timescale|1ns/1ns|ram32x4.v|
+!i113 1
+R10
+R11
+vvga_adapter
+Z12 !s110 1542169087
+!i10b 1
+!s100 hkUB>b^KO=L]9S>>Mk8nj1
+IXfZ97z9?L:4@nzhMhJ8DD0
+R2
+R0
+Z13 w1541993907
+8vga_adapter.v
+Fvga_adapter.v
+L0 78
+R6
+r1
+!s85 0
+31
+Z14 !s108 1542169087.000000
+Z15 !s107 vga_pll.v|vga_controller.v|vga_address_translator.v|vga_adapter.v|part2.v|
+Z16 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|vga_adapter.v|vga_address_translator.v|vga_controller.v|vga_pll.v|
+!i113 1
+R10
+R11
+vvga_address_translator
+R12
+!i10b 1
+!s100 3:mV5[e>gggL@b>hDoKk>3
+ISPfQ2Zm^@Zl66a3_SUKZF2
+R2
+R0
+R13
+8vga_address_translator.v
+Fvga_address_translator.v
+L0 4
+R6
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R10
+R11
+vvga_controller
+R12
+!i10b 1
+!s100 cVLRelV0U7V5APo3<>Q0P3
+Id1;g[PKWUlYU4LT3UT@<N2
+R2
+R0
+R13
+8vga_controller.v
+Fvga_controller.v
+L0 9
+R6
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R10
+R11
+vvga_pll
+R12
+!i10b 1
+!s100 4XSTjD`VEiamX^n1@5J`b3
+IzQM`zm>88jCI6S6DI_f@40
+R2
+R0
+R13
+8vga_pll.v
+Fvga_pll.v
+L0 36
+R6
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R10
+R11

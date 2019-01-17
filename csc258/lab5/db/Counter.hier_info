@@ -1,0 +1,210 @@
+|Counter
+LEDR[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= Q[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= Q[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= Q[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= Q[7].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= segmentdecoder:sd0.hex
+HEX0[1] <= segmentdecoder:sd0.hex
+HEX0[2] <= segmentdecoder:sd0.hex
+HEX0[3] <= segmentdecoder:sd0.hex
+HEX0[4] <= segmentdecoder:sd0.hex
+HEX0[5] <= segmentdecoder:sd0.hex
+HEX0[6] <= segmentdecoder:sd0.hex
+HEX1[0] <= segmentdecoder:sd1.hex
+HEX1[1] <= segmentdecoder:sd1.hex
+HEX1[2] <= segmentdecoder:sd1.hex
+HEX1[3] <= segmentdecoder:sd1.hex
+HEX1[4] <= segmentdecoder:sd1.hex
+HEX1[5] <= segmentdecoder:sd1.hex
+HEX1[6] <= segmentdecoder:sd1.hex
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+KEY[0] => KEY[0].IN1
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+
+
+|Counter|CounterSub:count
+Q[0] <= TFlipFlop:f0.Q
+Q[1] <= TFlipFlop:f1.Q
+Q[2] <= TFlipFlop:f2.Q
+Q[3] <= TFlipFlop:f3.Q
+Q[4] <= TFlipFlop:f4.Q
+Q[5] <= TFlipFlop:f5.Q
+Q[6] <= TFlipFlop:f6.Q
+Q[7] <= TFlipFlop:f7.Q
+enable => enable.IN1
+clock => clock.IN8
+clear_b => clear_b.IN8
+
+
+|Counter|CounterSub:count|TFlipFlop:f0
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f1
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f2
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f3
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f4
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f5
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f6
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|CounterSub:count|TFlipFlop:f7
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable => Q~reg0.ENA
+clock => Q~reg0.CLK
+clear_b => Q~reg0.ACLR
+
+
+|Counter|segmentdecoder:sd0
+hex[0] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN0
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[1] => hex.IN0
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN0
+SW[1] => hex.IN0
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN0
+SW[1] => hex.IN1
+SW[2] => hex.IN1
+SW[2] => hex.IN0
+SW[2] => hex.IN0
+SW[2] => hex.IN0
+SW[2] => hex.IN1
+SW[2] => hex.IN0
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+
+
+|Counter|segmentdecoder:sd1
+hex[0] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+hex[6] <= hex.DB_MAX_OUTPUT_PORT_TYPE
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN0
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[0] => hex.IN1
+SW[1] => hex.IN0
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN0
+SW[1] => hex.IN0
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN1
+SW[1] => hex.IN0
+SW[1] => hex.IN1
+SW[2] => hex.IN1
+SW[2] => hex.IN0
+SW[2] => hex.IN0
+SW[2] => hex.IN0
+SW[2] => hex.IN1
+SW[2] => hex.IN0
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+SW[3] => hex.IN1
+
+
